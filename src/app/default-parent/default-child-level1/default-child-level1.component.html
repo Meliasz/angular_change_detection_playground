@@ -1,0 +1,23 @@
+<h4 ><span class="text-success">1st Child Default</span>
+</h4>
+<button type="button" class="btn btn-info" (click)="updatePrimitive()">Update primitive val</button>
+<button type="button" class="ms-2 btn btn-info" (click)="updateObjectValue()">Update object val</button>
+<button type="button" class="ms-2 btn btn-info" (click)="updateObjectReference()">Update object ref</button>
+<button type="button" class="ms-2 btn btn-info" #detect>Detect</button>
+<button type="button" class="ms-2 btn btn-info" #mark>Mark</button>
+<button type="button" class="ms-2 btn btn-info" (click)="detach()">Detach</button>
+<button type="button" class="ms-2 btn btn-info" (click)="retach()">Reattach</button>
+<div>Primitive input value: <b>{{primitive}}</b>, Object property value: <b>{{obj.prop1}}</b></div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <p class="card-text">Change detection triggered at: <b *ngIf="detectionStamp">{{detectionStamp | date:'HH:mm:ss'}}</b></p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+<app-default-grandchild-level1 [primitive]="primitive" [obj]="obj"></app-default-grandchild-level1>
+  </div>
+  <div class="col-8">
+   <app-default-granchild-onpush-level1 [primitive]="primitive" [obj]="obj"></app-default-granchild-onpush-level1>
+  </div>
+</div>

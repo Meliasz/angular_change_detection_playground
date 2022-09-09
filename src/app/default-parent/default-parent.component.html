@@ -1,0 +1,29 @@
+<h3><span class="text-success">Parent Default</span>
+  <button type="button" class="ms-2 btn btn-primary" (click)="updatePrimitive()">Update primitive val</button>
+  <button type="button" class="ms-2 btn btn-primary" (click)="updateObjectValue()">Update object val</button>
+  <button type="button" class="ms-2 btn btn-primary" (click)="updateObjectReference()">Update object ref</button>
+  <button type="button" class="ms-2 btn btn-primary" (click)="clickEvent()">Click event</button>
+  <button type="button" class="ms-2 btn btn-primary" #timeout>Set timeout</button>
+  <button type="button" class="ms-2 btn btn-primary" #http>Http</button>
+  <button type="button" class="ms-2 btn btn-primary" #httpError>Http error</button>
+  <button type="button" class="ms-2 btn btn-primary" #detect>Detect</button>
+  <button type="button" class="ms-2 btn btn-primary" #mark>Mark</button>
+  <button type="button" class="ms-2 btn btn-primary" #detach>Detach</button>
+  <button type="button" class="ms-2 btn btn-primary" #retach>Reattach</button>
+  <button type="button" class="ms-2 btn btn-primary" (click)="clickParent()"><span (click)="clickChild()">Coalescing</span></button>
+  <button type="button" class="ms-2 btn btn-primary" #zone>ngZone click</button>
+</h3>
+<div>Primitive input value: <b>{{primitive}}</b>, Object property value: <b>{{obj.prop1}}</b></div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <p class="card-text">Change detection triggered at: <b>{{detectionStamp | date:'HH:mm:ss'}}</b></p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-9">
+  <app-default-child-level1 [primitive]="primitive" [obj]="obj"></app-default-child-level1>
+  </div>
+  <div class="col-3">
+    <app-default-child-level-2 [primitive]="primitive" [obj]="obj"></app-default-child-level-2>
+  </div>
+</div>

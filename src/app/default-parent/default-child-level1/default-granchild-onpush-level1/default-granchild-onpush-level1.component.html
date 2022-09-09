@@ -1,0 +1,20 @@
+<h5 class="text-success">2nd GrandChild - OnPush</h5>
+<button type="button" class="btn btn-dark" #clickL>Click event</button>
+<button type="button" class="ms-2 btn btn-dark" (click)="invokeSetTimeout()">Set timeout</button>
+<button type="button" class="ms-2 btn btn-dark" (click)="httpReq()">Http</button>
+<button type="button" class="ms-2 btn btn-dark" (click)="updatePrimitive()">Update primitive val</button>
+<button type="button" class="ms-2 btn btn-dark" (click)="updateObjectValue()">Update object val</button>
+<button type="button" class="ms-2 btn btn-dark" (click)="updateObjectReference()">Update object ref</button>
+<button type="button" class="ms-2 btn btn-dark" #detect>Detect</button>
+<button type="button" class="ms-2 btn btn-dark" #mark>Mark</button>
+<p></p>
+<button type="button" class="btn btn-dark" (click)="detach()">Detach</button>
+<button type="button" class="ms-2 btn btn-dark" (click)="retach()">Reattach</button>
+<div>Primitive input value: <b>{{primitive}}</b>, Object property value: <b>{{obj.prop1}}</b></div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <p class="card-text">Change detection triggered at: <b *ngIf="detectionStamp">{{detectionStamp | date:'HH:mm:ss'}}</b></p>
+  </div>
+</div>
+<app-grandchild-of-granchild-on-push [primitive]="primitive" [obj]="obj"></app-grandchild-of-granchild-on-push>
+<app-default-child-level-2 [primitive]="primitive" [obj]="obj"></app-default-child-level-2>
