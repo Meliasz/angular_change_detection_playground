@@ -1,5 +1,5 @@
 import { DetectionSourceService } from './../../../detection-source.service';
-import { AfterViewChecked, ChangeDetectionStrategy, Component, Input, AfterContentChecked, ChangeDetectorRef, NgZone, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, AfterContentChecked, ChangeDetectorRef, NgZone, ElementRef, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { fromEvent } from 'rxjs';
 
